@@ -74,12 +74,12 @@ public class UserRegister {
        @function : password Validation
        @return: No return value.
       */
-    // Rule1 minimum 8 Characters
+    // Rule2 Should have one upper case
     public static void password() {
         Scanner sc  = new Scanner(System.in);
         System.out.println("\nEnter the Password");
         String p = sc.nextLine();
-        if (Pattern.matches("^[A-Za-z0-9]{8,}$", p) == true)
+        if (Pattern.matches("^(?=.*[a-z])\"+\"(?=.*[A-Z]){8,}$", p) == true)//should have one upper case
             System.out.println("Valid Password");
         else
             System.out.println("Invalid Password");
